@@ -16,7 +16,9 @@ public interface StudentDao {
 
     List<Student> queryStudents(Student student);
 
-    boolean insertOrUpdateStudent (Student student);
+    int insertStudent (Student student);
+
+    int updateStudent (Student student);
 
     boolean deleteStudent (Student student);
 
