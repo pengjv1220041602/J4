@@ -8,6 +8,13 @@
     <artifactId>u4</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.5.RELEASE</version>
+    </parent>
+    
     <modules>
         <module>u4-entry</module>
         <module>u4-service-api</module>
@@ -15,14 +22,10 @@
         <module>u4-controller</module>
         <module>u4-dao</module>
         <module>u4-common</module>
+        <module>u4-test</module>
     </modules>
 
     <dependencies>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-        </dependency>
         <!--工具包-->
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -30,4 +33,32 @@
             <version>3.4</version>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <!--  <plugin>
+                  <groupId>org.springframework.boot</groupId>
+                  <artifactId>spring-boot-maven-plugin</artifactId>
+              </plugin>-->
+
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.iebook.IEBookApplication</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <!--仓库是spring仓库-->
+    <repositories>
+        <repository>
+            <id>spring-snapshots</id>
+            <name>Spring Snapshots</name>
+            <url>https://repo.spring.io/libs-snapshot</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 </project>
